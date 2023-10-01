@@ -1,25 +1,91 @@
 .container {
-	max-width: 1295px;
-	padding: 0 15px;
-	margin: 0 auto;
+  max-width: 1295px;
+  padding: 0 15px;
+  margin: 0 auto;
 }
 
 .bg-cover {
-	background-size: cover;
-	background-position: center center;
-	background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .gradient-sec {
-	position: relative;
-	z-index: 1;
-	background: rgb(29, 67, 255);
-	background: -moz-linear-gradient(180deg, rgba(29, 67, 255, 0.1) 0%, rgba(29, 67, 255, 0) 100%);
-	background: -webkit-linear-gradient(180deg, rgba(29, 67, 255, 0.1) 0%, rgba(29, 67, 255, 0) 100%);
-	background: linear-gradient(180deg, rgba(29, 67, 255, 0.1) 0%, rgba(29, 67, 255, 0) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1d43ff", endColorstr="#1d43ff", GradientType=1);
+  position: relative;
+  z-index: 1;
+  background: rgb(29, 67, 255);
+  background: -moz-linear-gradient(180deg, rgba(29, 67, 255, 0.1) 0%, rgba(29, 67, 255, 0) 100%);
+  background: -webkit-linear-gradient(180deg, rgba(29, 67, 255, 0.1) 0%, rgba(29, 67, 255, 0) 100%);
+  background: linear-gradient(180deg, rgba(29, 67, 255, 0.1) 0%, rgba(29, 67, 255, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1d43ff", endColorstr="#1d43ff", GradientType=1);
+}
+
+.bg-slanted-light-blue {
+  background-image: url('#{$image-path}/slanted-bg-light-blue.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 .text-center {
-	text-align: center;
+  text-align: center;
+}
+
+.text-blue {
+  color: $blue;
+}
+
+.text-dark-blue {
+  color: $dark-blue;
+}
+
+.section-y-gap {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+
+  @media (min-width: 992px) {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  &--lg {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    @media (min-width: 992px) {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+  }
+}
+
+.three-columns {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: calc(-0.5 * 1.5rem);
+  margin-left: calc(-0.5 * 1.5rem);
+
+  &>* {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(1.5rem * 0.5);
+    padding-left: calc(1.5rem * 0.5);
+		margin-bottom: 1.5rem;
+
+		@media (min-width: 768px) {
+			flex: 0 0 auto;
+      width: 50%;
+		}
+
+    @media (min-width: 992px) {
+      width: 33.33333333%;
+    }
+  }
+}
+
+.mw-md {
+  justify-content: center;
+	&>* {    
+		max-width: 416px;
+	}
 }

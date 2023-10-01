@@ -47,7 +47,7 @@ body {
   margin: 0; // 1
   text-align: left; // 3
 	font-size: 1rem;
-	line-height: 1.2;
+	line-height: 1.5;
 	font-family: $helvetica;
 	color: $lt-blue;
   
@@ -226,8 +226,19 @@ html {
 	scroll-behavior: smooth;
 }
 
+//
+// Links
+//
+
 a {
-	text-decoration: decoration;
-	transition: all ease-in-out 300ms;
-	position: relative;
+  color: $link-color;
+  text-decoration: $link-decoration;
+  background-color: transparent; // Remove the gray background on active links in IE 10.
+  transition: all ease-in-out 300ms;
+
+  &:hover,
+  &:focus {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
 }

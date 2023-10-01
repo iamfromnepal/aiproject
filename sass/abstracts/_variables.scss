@@ -2,13 +2,7 @@
 $image-path: '../../img';
 $font-path: '../../fonts';
 
-// Variables
-//
-// Variables should follow the `$component-state-property-size` formula for
-// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
-
-// Color system
-
+// Colors
 $white:    #fff !default;
 $gray-100: #F2F2F2;
 $gray-200: #e9ecef !default;
@@ -19,6 +13,8 @@ $gray-600: #656565;
 $gray-700: #495057 !default;
 $gray-800: #363535;
 $gray-900: #151515;
+$black:    #000 !default;
+
 $blue: #1D43FF;
 $lt-blue: #497696;
 $lt-blue-100: #5e71cf;
@@ -26,12 +22,14 @@ $lt-blue-200: #E3F3FF;
 $lt-blue-300: #D2D9FF;
 $lt-blue-400: #D4F7EC;
 $lt-blue-500: #DEDEFF;
+
 $dark-blue: #083A5E;
+
 $purple: #6882FF;
 $lt-purple: #331A5D;  
-$black:    #000 !default;
+
 $pinkis-blue: #bbaacc;
-$primary: $blue;
+
 $light-gray-1: #E3E3E3;
 $light-gray-2: #E6E5FF;
 $light-gray-3: #E2FFF0;
@@ -40,7 +38,23 @@ $light-gray-5: #DFDFDF;
 $light-gray-6: #E5E5E5;
 $light-gray-7: #E0F2FF;
 
+$primary: $blue;
+
 $green: #23C16B;
 
 //Fonts
 $helvetica: 'HelveticaNeue', sans-serif;
+
+// Typography
+$font-size-base:              1rem; // Assumes the browser default, typically `16px`
+$font-size-lg:                $font-size-base * 1.25;
+$font-size-sm:                $font-size-base * .875;
+
+// Links
+//
+// Style anchor elements.
+
+$link-color:              $blue;
+$link-decoration:         none;
+$link-hover-color:        darken($link-color, 15%);
+$link-hover-decoration:   underline;
