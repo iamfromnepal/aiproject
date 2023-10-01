@@ -1,0 +1,204 @@
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: $white;
+    transition: .5s all ease-in-out;
+    padding: 15px 0;
+    box-shadow: 0 0 15px 5px rgba($black, .05);
+    z-index: 10000;
+
+    @media(min-width: 1200px) {
+        padding: 20px 0;
+    }
+
+    .nav {
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .site-logo {
+            max-width: 150px;
+
+            @media(min-width: 1200px) {
+                max-width: 199px;
+            }
+        }
+
+        .navbarToggle {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            overflow-x: hidden;
+            overflow-y: auto;
+            background: rgba($white, .3);
+            backdrop-filter: blur(10px);
+            padding: 20px 10px;
+            box-shadow: 0 0 15px 5px rgba($black, .1);
+            max-width: 280px;
+            width: 70%;
+            z-index: 1000;
+            transform: translateX(-100%);
+            transition: .5s all ease-in-out;
+
+            @media(min-width: 1200px) {
+                position: static;
+                background: transparent;
+                max-width: 100%;
+                width: calc(100% - 220px);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0;
+                box-shadow: none;
+                transform: translateX(0) !important;
+                overflow: visible;
+            }
+
+            &.open {
+                transform: translateX(0);
+            }
+
+            @media(min-width: 1400px) {}
+
+            ul {
+                list-style-type: none;
+                padding: 0 15px;
+                margin: 0;
+
+                @media(min-width: 1200px) {
+                    display: flex;
+                    gap: 20px;
+                    flex-grow: 1;
+                    justify-content: center;
+                }
+
+                @media(min-width: 1400px) {
+                    gap: 30px;
+                }
+
+                li {
+                    list-style-type: none;
+                    padding: 0;
+                    margin: 0;
+                    border-bottom: 1px solid $lt-blue;
+
+                    @media(min-width: 1200px) {
+                        border: 0;
+                    }
+                }
+
+                a {
+                    color: $lt-blue;
+                    text-decoration: none;
+                    display: block;
+                    position: relative;
+                    padding: 10px 15px;
+
+                    &:before {
+                        position: absolute;
+                        content: '';
+                        bottom: 0;
+                        left: 0;
+                        width: 0;
+                        height: 100%;
+                        background: $lt-blue;
+                        transition: .3s all ease-in-out;
+                        z-index: -1;
+
+                        @media(min-width: 1200px) {
+                            height: 1px;
+                            bottom: -3px;
+                        }
+                    }
+
+                    &:hover {
+                        color: $white;
+
+                        @media(min-width: 1200px) {
+                            color: $lt-blue;
+                        }
+
+                        &:before {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            .btn-wrap {
+
+                a {
+                    display: block;
+
+                    @media(min-width: 1200px) {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+
+        &TogglerBtn {
+            width: 35px;
+            height: 26px;
+            position: relative;
+            transition: .5s all ease-in-out;
+            cursor: pointer;
+            border: 0;
+            background: transparent;
+            padding: 0;
+
+            @media(min-width: 1200px) {
+                display: none !important;
+            }
+
+            span {
+                display: block;
+                position: absolute;
+                height: 4px;
+                width: 100%;
+                background: $blue;
+                opacity: 1;
+                transition: .25s all ease-in-out;
+                border-radius: 100px;
+
+                &:nth-child(1) {
+                    top: 0px;
+                }
+
+                &:nth-child(2),
+                &:nth-child(3) {
+                    top: 10px;
+                }
+
+                &:nth-child(4) {
+                    top: 21px;
+                }
+            }
+
+
+            &.open {
+                span {
+
+                    &:nth-child(1),
+                    &:nth-child(4) {
+                        opacity: 0;
+                    }
+
+                    &:nth-child(2) {
+                        transform: rotate(45deg);
+                    }
+
+                    &:nth-child(3) {
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
+}

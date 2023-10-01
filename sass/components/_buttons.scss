@@ -1,0 +1,101 @@
+.btn {
+    background: $blue;
+    border: 1px solid $blue;
+    color: $white;
+    font-weight: bold;
+    padding: 16px 15px;
+    font-size: 15px;
+    border-radius: 5px;
+    display: inline-block;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-align: center;
+    min-width: 103px;
+    vertical-align: top;
+
+    &:hover {
+        background: $white;
+        color: $blue;
+    }
+
+    &.btn {
+
+        &-sm {
+            min-width: 146px;
+        }
+
+        &-primary {
+
+            &:hover {}
+        }
+
+        &-secondary {
+
+            &:hover {}
+        }
+
+        &-normal {
+            background: transparent;
+            border: 0;
+            color: $lt-blue;
+            min-width: 20px;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+
+        &-outline {
+            background-color: $white;
+            color: $dark-blue;
+
+            &:hover {
+                background: $dark-blue;
+                color: $white;
+            }
+        }
+
+        &-gradient {
+            position: relative;
+            z-index: 1;
+            border: 0;
+            overflow: hidden;
+
+            &:after,
+            &:before {
+                position: absolute;
+                content: '';
+                z-index: -1;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                background: $blue;
+                background: -moz-linear-gradient(90deg, $blue 0%, $lt-blue-100 50%, $pinkis-blue 100%);
+                background: -webkit-linear-gradient(90deg, $blue 0%, $lt-blue-100 50%, $pinkis-blue 100%);
+                background: linear-gradient(90deg, $blue 0%, $lt-blue-100 50%, $pinkis-blue 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="$blue", endColorstr="$pinkis-blue", GradientType=1);
+                transition: .5s all ease-in-out;
+            }
+
+            &:before {
+                background: rgb(187, 170, 204);
+                background: -moz-linear-gradient(90deg, rgba(187, 170, 204, 1) 0%, rgba(94, 113, 207, 1) 50%, rgba(29, 67, 255, 1) 100%);
+                background: -webkit-linear-gradient(90deg, rgba(187, 170, 204, 1) 0%, rgba(94, 113, 207, 1) 50%, rgba(29, 67, 255, 1) 100%);
+                background: linear-gradient(90deg, rgba(187, 170, 204, 1) 0%, rgba(94, 113, 207, 1) 50%, rgba(29, 67, 255, 1) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#bbaacc", endColorstr="#1d43ff", GradientType=1);
+            }
+
+            &:hover {
+                color: $white;
+
+                &:after {
+                    // transform: rotate(180deg);
+                    opacity: 0;
+                }
+            }
+
+        }
+
+    }
+}

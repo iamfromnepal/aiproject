@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "build": "npm run build:css && npm run build:js",
+    "build:css": "npx node-sass sass/main.scss dist/css/main.css --output-style=compressed && npx postcss dist/css/main.css --output dist/css/main.css --no-map",
+    "scss": "npx node-sass sass/main.scss dist/css/main.css --output-style=compressed --watch",
+    "build:js": "npx babel js/main.js --out-file dist/js/main.js --no-comments --minified --presets=@babel/preset-env && terser --compress --mangle --output dist/js/main.js -- dist/js/main.js",
+    "js": "npx babel js/main.js --out-file dist/js/main.js --no-comments --minified --presets=@babel/preset-env --watch"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.22.15",
+    "@babel/core": "^7.22.20",
+    "@babel/preset-env": "^7.22.20",
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "autoprefixer": "^10.4.16",
+    "node-sass": "^9.0.0",
+    "postcss": "^8.4.30",
+    "postcss-cli": "^10.1.0",
+    "terser": "^5.20.0"
+  }
+}
