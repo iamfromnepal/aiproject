@@ -1,8 +1,11 @@
-// Variable Overrides
-@import "abstracts/variables";
+// Fonts and Variables
+@import "./abstracts/variables";
+@import "./abstracts/fonts";
 
-@import "utilities/helpers";
+// Base, Components and Layouts
+@import "./base/base";
+@import "./components/components";
+@import "./layouts/layouts";
 
-@import "base/base";
-@import "components/components";
-@import "layouts/layouts";
+// Utilities
+@import "./utilities/utilities";

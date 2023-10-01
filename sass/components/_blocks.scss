@@ -1,0 +1,42 @@
+.data-block {
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: calc(-0.5 * 1.5rem);
+    margin-left: calc(-0.5 * 1.5rem);
+  }
+  &__item {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(1.5rem * 0.5);
+    padding-left: calc(1.5rem * 0.5);
+
+    @media (min-width: 768px) {
+      flex: 0 0 auto;
+      width: 33.33333333%;
+    }
+  }
+
+  &__card {
+    border: 1px solid rgba($black, 0.12);
+    border-radius: 0.625rem;
+    padding: 2.5rem 1.5rem;
+
+    &-text {
+      text-align: center;
+    }
+
+    &-head {
+      display: block;
+      font-size: 3.4375rem;
+      font-weight: 700;
+      color: $purple;
+      margin-bottom: 1rem;
+
+      @media (min-width: 992px) {
+        margin-bottom: 1.125rem;
+      }
+    }
+  }
+}
