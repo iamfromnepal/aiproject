@@ -97,5 +97,45 @@
 
         }
 
+        &-white {
+            background-color: $white;
+            color: $dark-blue;
+            border-color: transparent;
+
+            &:hover,
+            &:focus {
+                background-color: $dark-blue;
+                border-color: $white;
+                color: $white;
+            }
+        }
+
+        &-radial {
+            border-radius: 50px;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        &-arrow {
+            display: inline-flex;
+            align-items: center;
+
+            i {
+                font-size: 21px;
+                padding-left: 1rem;
+            }
+        }
+
+        &-light {
+            background-color: $light-gray-7;
+            color: $dark-blue;
+            border-color: transparent;
+
+            &:hover,
+            &:focus {
+                background-color: $blue;
+                color: $white;
+            }
+        }
     }
 }
