@@ -21,13 +21,17 @@
 }
 
 .bg-slanted-light-blue {
-  background-image: url('#{$image-path}/slanted-bg-light-blue.png');
+  background-image: url("#{$image-path}/slanted-bg-light-blue.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 
 .text-center {
   text-align: center;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
 }
 
 .text-blue {
@@ -58,24 +62,38 @@
   }
 }
 
+.two-columns,
 .three-columns {
   display: flex;
   flex-wrap: wrap;
   margin-right: calc(-0.5 * 1.5rem);
   margin-left: calc(-0.5 * 1.5rem);
 
-  &>* {
+  & > * {
     flex-shrink: 0;
     width: 100%;
     max-width: 100%;
     padding-right: calc(1.5rem * 0.5);
     padding-left: calc(1.5rem * 0.5);
-		margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
 
-		@media (min-width: 768px) {
-			flex: 0 0 auto;
+.two-columns {
+  & > * {
+    @media (min-width: 992px) {
+      flex: 0 0 auto;
       width: 50%;
-		}
+    }
+  }
+}
+
+.three-columns {
+  & > * {
+    @media (min-width: 768px) {
+      flex: 0 0 auto;
+      width: 50%;
+    }
 
     @media (min-width: 992px) {
       width: 33.33333333%;
@@ -85,7 +103,82 @@
 
 .mw-md {
   justify-content: center;
-	&>* {    
-		max-width: 416px;
-	}
+  & > * {
+    max-width: 416px;
+  }
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.has-horizontal-sep {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -124px;
+    background-image: url('#{$image-path}/horizontal-separator.png');
+    background-repeat: no-repeat;
+    background-size: 161px 12px;
+    width: 161px;
+    height: 12px;
+
+    @media (max-width: 991px) {
+      display: none;
+    }
+  }
+}
+
+.has-vertical-sep {
+  position: relative;
+
+  @media (max-width: 991px) {
+    margin-bottom: 230px;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+    background-image: url('#{$image-path}/vertical-separator.png');
+    background-repeat: no-repeat;
+    background-size: 12px 259px;
+    width: 12px;
+    height: 259px;
+
+    // @media (max-width: 991px) {
+    //  display: none;
+    // }
+  }
+}
+
+.order-1 {
+  order: 1;
+}
+
+.order-2 {
+  order: 2;
+}
+
+.order-lg-1 {
+  @media (min-width: 992px) {
+    order: 1;
+  }
+}
+
+.order-lg-2 {
+  @media (min-width: 992px) {
+    order: 2;
+  }
 }
